@@ -7,7 +7,6 @@ const entryService = require('./entry.service');
 
 
 // routes
-
 router.post('/create', createSchema, create);
 router.get('/', authorize(), getAll);
 router.get('/current', authorize(), getCurrent);
@@ -97,6 +96,6 @@ function update(req, res, next) {
 
 function _delete(req, res, next) {
     userService.delete(req.params.id)
-        .then(() => res.json({ message: 'User deleted successfully' }))
+        .then(() => res.json({ message: 'Entry deleted successfully' }))
         .catch(next);
 }
